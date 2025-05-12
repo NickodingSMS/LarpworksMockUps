@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Garamond&display=swap" rel="stylesheet">
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LARPWorks Login</title>
+  
+ 
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="container">
+  
+    <header class="logo-header">
+      <img src="public/LWLogo.jpg" alt="LARPWorks Logo" class="logo">
+      <p class="subtitle">The LarpWorks App</p>
+    </header>
+
+    <main>
+      <form id="login-form" class="login-form">
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="login-btn">Log In</button>
+        </div>
+
+        <!-- Error message section -->
+        <div id="error-message" class="error-message" style="display: none;">
+          <p id="error-text"></p>
+        </div>
+
+        <div class="links">
+          <a href="signup.html">Sign Up</a> | <a href="forgot-password.html">Forgot Password?</a>
+        </div>
+      </form>
+    </main>
+  </div>
+
+ 
+  <script src="login.js"></script>
+</body>
+</html>

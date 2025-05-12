@@ -1,0 +1,60 @@
+/* === Table Layout Styles for Dashboard and Reuse === */
+
+.table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 20px;
+  }
+  
+  .character-grid {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 16px;
+    table-layout: auto;
+  }
+  
+  .character-grid thead {
+    background-color: #f0f0f0;
+  }
+  
+  .character-grid th,
+  .character-grid td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+  }
+  
+  .character-grid tbody tr:hover {
+    background-color: #7c7c7c;
+  }
+  
+  .character-grid th {
+    font-weight: bold;
+    color: #333;
+  }
+  .edit-btn{
+    color: #ffa600;
+  }
+  /* === Responsive Table Adjustments === */
+  
+  @media (max-width: 768px) {
+    .character-grid th,
+    .character-grid td {
+      padding: 10px;
+      font-size: 14px;
+    }
+  
+    .character-grid tr {
+      cursor: default;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .character-grid th,
+    .character-grid td {
+      font-size: 13px;
+      padding: 8px;
+    }
+  }
+  

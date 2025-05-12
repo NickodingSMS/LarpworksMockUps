@@ -1,0 +1,226 @@
+/* === GLOBAL STYLES === */
+@font-face {
+  font-family: 'Cooper Hewitt Bold';
+  src: url('/fonts/CooperHewitt-Bold.woff2') format('woff2');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Monogram';
+  src: url('/fonts/Monogram.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    font-family: 'Cooper Hewitt Bold', sans-serif;
+    background: url('public/FB.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+  }
+  
+ /* Global Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0.7);
+  }
+  
+  .nav-left {
+    flex: 1;
+  }
+  
+  .nav-center {
+    flex: 2;
+    text-align: center;
+    
+  }
+  .centerTitle{
+    font-size: 1em;
+  }
+  
+  .nav-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .nav-logo {
+    height: 40px;
+    cursor: pointer;
+  }
+  
+  .profile-container {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .profile-dropdown {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    background-color: #444;
+    width: 150px; /* Set fixed width */
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000; /* Make sure it overlays */
+  }
+  
+  
+  .profile-dropdown a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    margin: 2px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+
+  
+  
+
+  
+  .button-group button,
+  .storyteller-actions button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 8px 14px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  /* === Global Data Grid Styles === */
+
+.data-grid-section {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 20px;
+  }
+  
+  .grid-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .grid-controls input,
+  .grid-controls button {
+    padding: 6px 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .grid-controls input {
+    flex: 1 1 300px;
+    min-width: 200px;
+  }
+  
+  .grid-controls button {
+    background-color: #1665D8;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .table-wrapper {
+    overflow-x: auto;
+  }
+  
+  .character-grid {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+    font-size: 0.95rem;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .character-grid th,
+  .character-grid td {
+    padding: 8px 10px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .character-grid th {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .icon-button {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #1665D8
+  }
+  
+  /* Responsive behavior */
+  
+
+@media (max-width: 768px) {
+  .search {
+    flex: 20px !important;
+  }
+
+  .character-grid tr {
+    cursor: pointer;
+  }
+
+  .navbar {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+ 
+}
+
+@media (max-width: 480px) {
+  .nav-logo {
+    width: 50px;
+  }
+
+  .nav-btn {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
+
+  @media (max-width: 768px) {
+    .character-grid th:last-child,
+    .character-grid td:last-child {
+      display: none;
+    }
+  
+    .grid-controls {
+      flex-direction: row;
+    }
+  
+    .grid-controls input,
+    .grid-controls button {
+      width: 100%;
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+ 
+    .profile-dropdown {
+      top: 48px;
+      right: 0;
+    }
+  }
+  

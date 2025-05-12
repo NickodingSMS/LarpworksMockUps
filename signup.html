@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Garamond&display=swap" rel="stylesheet">
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LARPWorks Sign Up</title>
+  
+  <!-- Link to login.css -->
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="container">
+    <header class="logo-header">
+      <img src="public/LWLogo.jpg" alt="LARPWorks Logo" class="logo">
+      <p class="subtitle">Create Your Account</p>
+    </header>
+
+    <main>
+      <form id="signup-form" class="login-form">
+        <div class="input-group">
+          <label for="new-username">Username</label>
+          <input type="text" id="new-username" name="username" placeholder="Enter your username" required>
+        </div>
+
+        <div class="input-group">
+          <label for="new-password">Password</label>
+          <input type="password" id="new-password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="login-btn">Sign Up</button>
+        </div>
+
+        <!-- Error message section -->
+        <div id="error-message" class="error-message" style="display: none;">
+          <p id="error-text"></p>
+        </div>
+
+        <div class="links">
+          <a href="login.html">Already have an account? Log in</a>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <!-- Link to signup.js -->
+  <script src="signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard - LARPWorks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Garamond&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-left">
+          <button class="admin-nav-toggle" id="navToggle">☰</button>
+        </div>
+        <div class="nav-center">
+          <!-- Optional future content -->
+        </div>
+        <div class="nav-right">
+          <div class="profile-container">
+            <img src="public/user.jpg" alt="Profile" class="profile-pic" id="profilePic" />
+            <div class="profile-dropdown" id="profileDropdown">
+              <a href="dashboard.html">Dashboard</a>
+              <a href="profile.html">Profile</a>
+              <a href="login.html">Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+      
+      <!-- Sidebar (outside navbar) -->
+      <nav class="admin-sidebar" id="adminSidebar">
+        <a href="dashboard.html">Game Dashboard</a>
+        <a href="characters.html">Characters</a>
+        <a href="schedule.html">Schedule & Updates</a>
+        <a href="advantages.html">Advantages</a>
+        <a href="interludes.html">Interlude Actions</a>
+        <a href="alchemy.html">Alchemy Loadouts</a>
+        <a href="backhistories.html">Character Backhistories</a>
+      </nav>
+      
+          
+    </div>
+  </header>
+
+  <!-- Admin Dashboard Content -->
+  <main class="main-content">
+    <section class="data-grid-section">
+      <h2>User Management</h2>
+
+      <div class="grid-controls">
+        <input type="text" placeholder="Search users..." />
+        <button id="addUserBtn">+ Add User</button>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="character-grid">
+          <thead>
+            <tr>
+              <th>User ID</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Sample Data -->
+            <tr>
+              <td>001</td>
+              <td>StoryKeeper</td>
+              <td>keeper@larpworks.org</td>
+              <td>Admin</td>
+              <td>Active</td>
+              <td>
+                <button class="icon-button">✏️</button>
+                <button class="icon-button">🗑️</button>
+              </td>
+            </tr>
+            <tr>
+              <td>002</td>
+              <td>MoonSinger</td>
+              <td>moon@larpworks.org</td>
+              <td>Storyteller</td>
+              <td>Suspended</td>
+              <td>
+                <button class="icon-button">✏️</button>
+                <button class="icon-button">🗑️</button>
+              </td>
+            </tr>
+            <!-- More users dynamically added -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="data-grid-section">
+      <h2>Site Activity Logs</h2>
+
+      <div class="table-wrapper">
+        <table class="character-grid">
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>User</th>
+              <th>Action</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2025-05-10 14:22</td>
+              <td>StoryKeeper</td>
+              <td>Created Character</td>
+              <td>“Thorne of Embervale”</td>
+            </tr>
+            <tr>
+              <td>2025-05-10 13:58</td>
+              <td>MoonSinger</td>
+              <td>Edited Lore Entry</td>
+              <td>“The Moonlit Pact”</td>
+            </tr>
+            <!-- More logs dynamically added -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+  <script src="global.js"></script>
+  <script>
+    const navToggle = document.getElementById("navToggle");
+    const sidebar = document.getElementById("adminSidebar");
+  
+    navToggle.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+    });
+  
+    // Optional: close sidebar on click outside
+    document.addEventListener("click", (e) => {
+      if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
+        sidebar.classList.remove("active");
+      }
+    });
+  </script>
+  
+  
+</body>
+</html>

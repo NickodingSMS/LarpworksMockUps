@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LARPWorks Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Garamond&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="tables.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="public/LWLogo.jpg" alt="LARPWorks Logo" class="nav-logo" onclick="window.location.href='dashboard.html'" />
+    </div>
+    <div class="nav-center">
+      <!-- Reserved for future content -->
+    </div>
+    <div class="nav-right">
+      <div class="profile-container">
+        <img src="public/user.jpg" alt="Profile" class="profile-pic" id="profilePic" />
+        <div class="profile-dropdown" id="profileDropdown">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="profile.html">Profile</a>
+          <a href="login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="data-grid-section">
+      <h2>Your Characters</h2>
+
+      <div class="grid-controls">
+        <input type="text" id="search" class="search" placeholder="Search characters..." />
+        <button id="createCharacter">+ Create Character</button>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="character-grid">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Main Character</th>
+              <th>Level</th>
+              <th>Unspent AP</th>
+              <th>Spent AP</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="characterTableBody">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="dashboard.js"></script>
+  <script src="global.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buy Advantage</title>
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="advantage.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <button onclick="window.location.href='player-view.html'" class="icon-button" title="Go Back">⬅ Go Back</button>
+    </div>
+    <div class="nav-center">
+      <h2 class="centerTitle">Choose an Advantage to Buy</h2>
+    </div>
+    <div class="nav-right">
+      <div class="profile-container">
+        <img src="public/user.jpg" alt="Profile" class="profile-pic" id="profilePic" />
+        <div class="profile-dropdown" id="profileDropdown">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="profile.html">Profile</a>
+          <a href="logout.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="data-grid-section">
+      <div class="grid-controls">
+        <button onclick="sortTableBy('name')">Sort by Name</button>
+        <button onclick="sortTableBy('tier')">Sort by Tier</button>
+        <button onclick="sortTableBy('type')">Sort by Type</button>
+        <button onclick="sortTableBy('magic')">Sort by Magic</button>
+        <button onclick="sortTableBy('combat')">Sort by Combat</button>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="character-grid" id="advantageTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Tier</th>
+              <th>Advantage Type</th>
+              <th>Magic School</th>
+              <th>Combat School</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Populate rows via JS or static for now -->
+            <tr>
+              <td>Arcane Focus</td>
+              <td>2</td>
+              <td>Magic</td>
+              <td>Evocation</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>Battle Trance</td>
+              <td>3</td>
+              <td>Combat</td>
+              <td>-</td>
+              <td>Martial</td>
+            </tr>
+            <tr>
+              <td>Silent Step</td>
+              <td>1</td>
+              <td>Utility</td>
+              <td>Illusion</td>
+              <td>Stealth</td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- JS logic -->
+  <script>
+    // Sort function
+    function sortTableBy(key) {
+      const table = document.getElementById("advantageTable");
+      const tbody = table.tBodies[0];
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+      const colIndex = {
+        name: 0,
+        tier: 1,
+        type: 2,
+        magic: 3,
+        combat: 4
+      }[key];
+
+      const sortedRows = rows.sort((a, b) => {
+        const cellA = a.cells[colIndex].textContent.trim().toLowerCase();
+        const cellB = b.cells[colIndex].textContent.trim().toLowerCase();
+        if (colIndex === 1) return parseInt(cellA) - parseInt(cellB); 
+        return cellA.localeCompare(cellB);
+      });
+
+      tbody.innerHTML = "";
+      sortedRows.forEach(row => tbody.appendChild(row));
+    }
+  </script>
+
+</body>
+</html>
