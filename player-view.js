@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const dropdown = document.querySelector('.player-dropdown'); // ← THIS LINE IS MISSING
   const characterInfo = document.querySelector('.character-info-section');
   const advantages = document.getElementById('advantagesSection');
   const historyJournal = document.getElementById('historyJournalSection');
