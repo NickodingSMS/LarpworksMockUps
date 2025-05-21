@@ -159,7 +159,13 @@ body {
   .character-grid th {
     background-color: rgba(255, 255, 255, 0.2);
   }
-  
+  .backbutton{
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #fff !important;
+  }
   .icon-button {
     background: none;
     border: none;

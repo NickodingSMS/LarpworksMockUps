@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="player-view.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Garamond&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="tables.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
   <!-- Navbar -->
@@ -33,188 +34,256 @@
   <!-- Main Content -->
   <main class="main-content">
     <div class="top-actions">
-      <button class="icon-button" title="Add 1 AP">➕ AP</button>
-      <button class="icon-button" title="Add 1 Skill Point">➕ Skill</button>
-   
-      <button class="icon-button-right" title="Download your player sheet">⬇️</button>
-      <button class="icon-button-right trash-button" title="Delete character">🗑️</button>
+      <div>
+        <button class="icon-button" title="Add 1 AP"><i class="fas fa-plus"></i> AP</button>
+        <button class="icon-button" title="Add 1 Skill Point"><i class="fas fa-plus"></i> Skill</button>
+        <button class="icon-button" title="Spend Interlude Action"><i class="fas fa-plus"></i>Spend Interlude Action</button>
+      </div>
+      <div>
+        <button class="icon-button-right" title="Download your player sheet"><i class="fas fa-download"></i></button>
+        <button class="icon-button-right trash-button" title="Delete character"><i class="fas fa-trash"></i></button>
+      </div>
     </div>
-    <div class="player-page">
-      <select class="player-dropdown">
-        <option selected>Character Information</option>
-        <option>Advantages</option>
-        <option>Character History & Journal</option>
-      </select>
-      <button class="purchase icon-button" title="Advantage" onclick="window.location.href='advantage.html'">➕ Advantage</button>
-      <!-- Character History & Journal Section (Initially Hidden) -->
-<div class="history-journal-section" id="historyJournalSection">
-  <div class="history-journal-block">
-    <h3>Character History</h3>
-    <ul class="history-list">
-      <li>Born under the Wolf sign in the Emberwood region.</li>
-      <li>Trained in swordsmanship by the Crimson Order.</li>
-      <li>Survived the Siege of Iron Hollow.</li>
-      <li>Discovered latent pyromantic abilities during the trial of fire.</li>
-    </ul>
-  </div>
+    
+    <!-- Character Information Summary -->
+    <div class="character-info-container">
+      <div class="character-info-summary">
+        <!-- Column 1 -->
+        <div class="info-column">
+          <p><strong>Name:</strong> <span>Arcturus</span></p>
+          <p><strong>Level:</strong> <span>5</span></p>
+          <p><strong>Unspent AP:</strong> <span>3</span></p>
+          <p><strong>Spent AP:</strong> <span>12</span></p>
+          <p><strong>Celestial Sign:</strong> <span>The Wolf</span></p>
+          <p><strong>Race:</strong> <span>Wildkin</span></p>
+          <p><strong>Created Subtype:</strong> <span>Homunculus</span></p>
+        </div>
 
-  <div class="history-journal-block">
-    <h3>Journal Entries</h3>
-    <ul class="journal-list">
-      <li><strong>Entry 1:</strong> “Today I met an old knight who told me about the relic in Ember Vault.”</li>
-      <li><strong>Entry 2:</strong> “Strange visions haunt my dreams... I think it’s the Void calling.”</li>
-      <li><strong>Entry 3:</strong> “I defeated the flame guardian — my power grows stronger.”</li>
-      <li><strong>Entry 4:</strong> “The Ember Guard has asked me to lead a new expedition.”</li>
-    </ul>
-  </div>
-</div>
-<div id="advantagesSection">
-    <div class="table-wrapper">
-      <h3>Purchased Advantages</h3>
-      <table class="character-grid">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Advantage Type</th>
-            <th>Magic School</th>
-            <th>Combat School</th>
-            <th>Tier</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Power Strike</td><td>Combat</td><td>—</td><td>Swordsmanship</td><td>1</td></tr>
-          <tr><td>Mana Efficiency</td><td>Magic</td><td>Fire</td><td>—</td><td>2</td></tr>
-          <tr><td>Silver Tongue</td><td>Social</td><td>—</td><td>—</td><td>1</td></tr>
-          <tr><td>Shield Wall</td><td>Combat</td><td>—</td><td>Defense</td><td>3</td></tr>
-        </tbody>
-      </table>
-    </div>
+        <!-- Column 2 -->
+        <div class="info-column">
+          <p><strong>Respend Tokens:</strong> <span>1</span></p>
+          <p><strong>Interlude Actions (Total):</strong> <span>4</span></p>
+          <p><strong>Interlude Actions (Available):</strong> <span>2</span></p>
+          <p><strong>Heroic Actions (Total):</strong> <span>3</span></p>
+          <p><strong>Heroic Actions (Available):</strong> <span>1</span></p>
+          <p><strong>Faction:</strong> <span>The Ember Guard</span></p>
+          <p><strong>Primary Magic:</strong> <span>Pyromancy</span></p>
+        </div>
 
-    <!-- Total Counts of Advantages Purchased More Than Once -->
-    <div class="table-wrapper">
-      <h3>Total Counts of Advantages Purchased More Than Once</h3>
-      <table class="character-grid">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Total Purchased</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Power Strike</td><td>3</td></tr>
-          <tr><td>Mana Efficiency</td><td>2</td></tr>
-          <tr><td>Silver Tongue</td><td>1</td></tr>
-          <tr><td>Shield Wall</td><td>4</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Affinity Advantages -->
-    <div class="table-wrapper">
-      <h3>Affinity Advantages</h3>
-      <table class="character-grid">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Magic School</th>
-            <th>Combat School</th>
-            <th>Tier</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Arcane Knowledge</td><td>Arcane</td><td>—</td><td>1</td></tr>
-          <tr><td>Night Vision</td><td>—</td><td>Stealth</td><td>2</td></tr>
-          <tr><td>Fire Affinity</td><td>Fire</td><td>—</td><td>3</td></tr>
-          <tr><td>Quick Learner</td><td>—</td><td>—</td><td>1</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Advantages with Choices -->
-    <div class="table-wrapper">
-      <h3>Advantages with Choices</h3>
-      <table class="character-grid">
-        <thead>
-          <tr>
-            <th>Advantage Name</th>
-            <th>Choice</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Combat Mastery</td><td>Choice 1: Duelist | Choice 2: Berserker</td></tr>
-          <tr><td>Elemental Mastery</td><td>Choice 1: Fire | Choice 2: Water</td></tr>
-          <tr><td>Healing Touch</td><td>Choice 1: Greater Heal | Choice 2: Revive</td></tr>
-          <tr><td>Arcane Adept</td><td>Choice 1: Wizard | Choice 2: Sorcerer</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-  
-</div>
-
-
-
-      <div class="player-sheet-container">
-       
-
-        <!-- Character Information Section -->
-        <div class="character-info-section">
-          <!-- Column 1 -->
-          <div class="char-col char-col-left">
-            <h2>Character Details</h2>
-            <p><strong>Name:</strong> Arcturus</p>
-            <p><strong>Level:</strong> 5</p>
-            <p><strong>Unspent AP:</strong> 3</p>
-            <p><strong>Spent AP:</strong> 12</p>
-            <p><strong>Celestial Sign:</strong> The Wolf</p>
-            <p><strong>Race:</strong> Wildkin</p>
-            <p><strong>Created Subtype:</strong> Homunculus</p>
-            <p><strong>Wildkin Subtype:</strong> Bear</p>
-            <p><strong>Zhana Subtype:</strong> Fire</p>
-            <p><strong>Elf Subtype:</strong> Night Elf</p>
-            <p><strong>Demon Subtype:</strong> Imp</p>
-            <p><strong>Demon Affinity:</strong> Shadow</p>
-            <p><strong>Vampire Subtype:</strong> Noble</p>
-            <p><strong>Primary Magic:</strong> Pyromancy</p>
-            <p><strong>Primary Combat:</strong> Swordsmanship</p>
-            <p><strong>Magic Affinity:</strong> Flame</p>
-            <p><strong>Combat Affinity:</strong> Heavy Weapons</p>
-            <p><strong>Second Affinity:</strong> Ice</p>
-            <p><strong>Second Affinity Combat:</strong> Dual Wield</p>
-            <p><strong>Nature Type:</strong> Predator</p>
-          </div>
-
-          <!-- Column 2 -->
-          <div class="char-col char-col-center">
-            <h2>Character Stats</h2>
-            <p><strong>Health:</strong> 120</p>
-            <p><strong>Natural Toughness:</strong> 35</p>
-            <p><strong>Stamina:</strong> 80</p>
-            <p><strong>Strength:</strong> 18</p>
-            <p><strong>Mana:</strong> 100</p>
-            <p><strong>Soul Shards:</strong> 2</p>
-            <p><strong>Has Bonus Life:</strong> Yes</p>
-          </div>
-
-          <!-- Column 3 -->
-          <div class="char-col char-col-right">
-            <h2>Actions and Faction</h2>
-            <p><strong>Respend Tokens:</strong> 1</p>
-            <p><strong>Interlude Actions (Total):</strong> 4</p>
-            <p><strong>Interlude Actions (Available):</strong> 2</p>
-            <p><strong>Heroic Actions (Total):</strong> 3</p>
-            <p><strong>Heroic Actions (Available):</strong> 1</p>
-            <p><strong>Faction:</strong> The Ember Guard</p>
-          </div>
+        <!-- Column 3 -->
+        <div class="info-column">
+          <p><strong>Soul Shards:</strong> <span>2</span></p>
+          <p><strong>Has Bonus Life:</strong> <span>Yes</span></p>
+          <p><strong>Natural Toughness:</strong> <span>35</span></p>
+          <p><strong>Strength:</strong> <span>18</span></p>
+          <p><strong>Magic Bonus:</strong> <span>+5</span></p>
+          <p><strong>Skill Points:</strong> <span>8</span></p>
+          <p><strong>Skills Used:</strong> <span>12</span></p>
         </div>
       </div>
     </div>
-    <!-- Advantages Section (Initially Hidden) -->
+    
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+    
+    <!-- Stats Display -->
+    <div class="stats-container">
+      <h2 class="stats-header">Character Stats</h2>
+      <div class="stats-display">
+        <div class="stat-item">
+          <div class="stat-name">Health</div>
+          <div class="stat-value">120</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-name">Stamina</div>
+          <div class="stat-value">80</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-name">Strength</div>
+          <div class="stat-value">18</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-name">Mana</div>
+          <div class="stat-value">100</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-name">Toughness</div>
+          <div class="stat-value">35</div>
+        </div>
+      </div>
+    </div>
+   
+    <div class="player-page">
+      <div class="player-controls">
+        <select class="player-dropdown">
+          <option selected>Interlude Actions</option>
+          <option>Advantages</option>
+          <option>Character History & Journal</option>
+        </select>
+        <button class="icon-button purchase" title="Advantage" onclick="window.location.href='advantage.html'"><i class="fas fa-plus"></i> Advantage</button>
+      </div>
+      
+      <!-- Character Information Section (Initially Shown) -->
+      <div class="section-container" id="characterInfoSection">
+        <!-- This will contain additional character information -->
+      </div>
+      
+      <!-- Advantages Section (Initially Hidden) -->
+      <div id="advantagesSection" style="display: none;">
+        <div class="table-wrapper">
+          <h3>Purchased Advantages</h3>
+          <table class="character-grid">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Advantage Type</th>
+                <th>Magic School</th>
+                <th>Combat School</th>
+                <th>Tier</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Power Strike</td><td>Combat</td><td>—</td><td>Swordsmanship</td><td>1</td></tr>
+              <tr><td>Mana Efficiency</td><td>Magic</td><td>Fire</td><td>—</td><td>2</td></tr>
+              <tr><td>Silver Tongue</td><td>Social</td><td>—</td><td>—</td><td>1</td></tr>
+              <tr><td>Shield Wall</td><td>Combat</td><td>—</td><td>Defense</td><td>3</td></tr>
+            </tbody>
+          </table>
+        </div>
 
+        <!-- Total Counts of Advantages Purchased More Than Once -->
+        <div class="table-wrapper">
+          <h3>Total Counts of Advantages Purchased More Than Once</h3>
+          <table class="character-grid">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Total Purchased</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Power Strike</td><td>3</td></tr>
+              <tr><td>Mana Efficiency</td><td>2</td></tr>
+              <tr><td>Silver Tongue</td><td>1</td></tr>
+              <tr><td>Shield Wall</td><td>4</td></tr>
+            </tbody>
+          </table>
+        </div>
 
+        <!-- Other advantage tables from the original HTML -->
+        <div class="table-wrapper">
+          <h3>Affinity Advantages</h3>
+          <table class="character-grid">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Magic School</th>
+                <th>Combat School</th>
+                <th>Tier</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Arcane Knowledge</td><td>Arcane</td><td>—</td><td>1</td></tr>
+              <tr><td>Night Vision</td><td>—</td><td>Stealth</td><td>2</td></tr>
+              <tr><td>Fire Affinity</td><td>Fire</td><td>—</td><td>3</td></tr>
+              <tr><td>Quick Learner</td><td>—</td><td>—</td><td>1</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-wrapper">
+          <h3>Advantages with Choices</h3>
+          <table class="character-grid">
+            <thead>
+              <tr>
+                <th>Advantage Name</th>
+                <th>Choice</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Combat Mastery</td><td>Choice 1: Duelist | Choice 2: Berserker</td></tr>
+              <tr><td>Elemental Mastery</td><td>Choice 1: Fire | Choice 2: Water</td></tr>
+              <tr><td>Healing Touch</td><td>Choice 1: Greater Heal | Choice 2: Revive</td></tr>
+              <tr><td>Arcane Adept</td><td>Choice 1: Wizard | Choice 2: Sorcerer</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <!-- Character History & Journal Section (Initially Hidden) -->
+      <div class="history-journal-section" id="historyJournalSection" style="display: none;">
+        <div class="history-journal-block">
+          <h3>Character History</h3>
+          <ul class="history-list">
+            <li>Born under the Wolf sign in the Emberwood region.</li>
+            <li>Trained in swordsmanship by the Crimson Order.</li>
+            <li>Survived the Siege of Iron Hollow.</li>
+            <li>Discovered latent pyromantic abilities during the trial of fire.</li>
+          </ul>
+        </div>
+
+        <div class="history-journal-block">
+          <h3>Journal Entries</h3>
+          <ul class="journal-list">
+            <li><strong>Entry 1:</strong> "Today I met an old knight who told me about the relic in Ember Vault."</li>
+            <li><strong>Entry 2:</strong> "Strange visions haunt my dreams... I think it's the Void calling."</li>
+            <li><strong>Entry 3:</strong> "I defeated the flame guardian — my power grows stronger."</li>
+            <li><strong>Entry 4:</strong> "The Ember Guard has asked me to lead a new expedition."</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </main>
 
   <script src="global.js"></script>
-  <script src="player-view.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const dropdown = document.querySelector('.player-dropdown'); 
+      const characterInfo = document.getElementById('characterInfoSection');
+      const advantages = document.getElementById('advantagesSection');
+      const historyJournal = document.getElementById('historyJournalSection');
+
+      function hideAllSections() {
+        characterInfo.style.display = 'none';
+        advantages.style.display = 'none';
+        historyJournal.style.display = 'none';
+      }
+
+      // Set initial state
+      hideAllSections();
+      characterInfo.style.display = 'block';
+
+      dropdown.addEventListener('change', (e) => {
+        hideAllSections();
+        const selected = e.target.value;
+        if (selected === 'Character Information') {
+          characterInfo.style.display = 'block';
+        } else if (selected === 'Advantages') {
+          advantages.style.display = 'block';
+        } else if (selected === 'Character History & Journal') {
+          historyJournal.style.display = 'block';
+        }
+      });
+
+      // Handle profile dropdown
+      const profilePic = document.getElementById('profilePic');
+      const profileDropdown = document.getElementById('profileDropdown');
+      
+      if (profilePic && profileDropdown) {
+        profilePic.addEventListener('click', () => {
+          profileDropdown.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        window.addEventListener('click', (e) => {
+          if (!e.target.matches('#profilePic')) {
+            if (profileDropdown.classList.contains('show')) {
+              profileDropdown.classList.remove('show');
+            }
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
